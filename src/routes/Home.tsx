@@ -12,7 +12,7 @@ const Home = () => {
 
     const [user, setUser] = useState<UserProps | null>(null);
 
-    const [repo, setRepo] = useState<RepoProps | null>(null);
+    const [repo, setRepo] = useState<RepoProps[] | null>(null);
 
 
     const loadUser = async (userName:string) => {
@@ -43,8 +43,8 @@ const Home = () => {
               <Col xs={12}><Search loadUser={loadUser} loadRepos={loadRepos}/></Col>
             </Row>
             <Row>
-              <Col xs={4}> { user && <Profile {...user}/> }</Col>
-              <Col xs={8}> { repo && <Repo {...repo}/> }</Col>
+              <Col xs={4}> { user && <Profile user={user} /> }</Col>
+              <Col xs={8}> { repo && repo.map(data => <Repo data={data}/> ) }</Col>
             </Row>
           </Container>
         </div>
