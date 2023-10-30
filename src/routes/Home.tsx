@@ -8,12 +8,15 @@ import { RepoProps } from "../types/repos";
 
 import { useState } from "react"
 import { Container, Row, Col } from "react-bootstrap";
+import Filter from "../components/Filter";
 
 const Home = () => {
 
     const [user, setUser] = useState<UserProps | null>(null);
 
     const [repo, setRepo] = useState<RepoProps[] | null>(null);
+
+    const [seacrhResults, setSearchResults]  = useState<RepoProps[]>([])
 
 
     const loadUser = async (userName:string) => {
@@ -32,6 +35,8 @@ const Home = () => {
       const data = await results.json();
       
       setRepo(data);
+
+      setSearchResults(data);
   
     } 
     
@@ -48,7 +53,6 @@ const Home = () => {
               {repo ?               
               <Col className="pe-0" xs={8}>
                 <div>
-                  henlo
                 </div>
                 <div className="p-0 wrapper">
                   { repo && repo.map(data => <Repo data={data}/> ) }
