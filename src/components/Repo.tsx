@@ -2,29 +2,24 @@ import "../sass/repo.scss";
 import { RepoProps } from "../types/repos";
 
 
- const Repo = ({
+type Repos = {
+  data: RepoProps
+}
 
-  name,
-  description,
-  language,
-  forks_count,
-  stargazers_count,
-  watchers_count,
-
-}: RepoProps) => {
+ const Repo = ({ data }: Repos) => {
 
   return (
     <div className="repo">
-      <span className="repo-text">{name}</span>
+      <span className="repo-text">{data.name}</span>
       <span className="repo-subtext">
-        {description}
+        {data.description}
       </span>
       <div className="repo-tagField">
         <span className="repo-tagField-tag">
-          {language} 
-          {forks_count} 
-          {stargazers_count} 
-          {watchers_count}
+          {data.language} 
+          {data.forks_count} 
+          {data.stargazers_count} 
+          {data.watchers_count}
           </span>
       </div>
     </div>
