@@ -24,7 +24,9 @@ type User = {
       <div className="profile-innerField">
         <span className="profile-innerField-text">{user.name}</span>
         <span className="profile-innerField-subtext">{user.login}</span>
-        <span className="profile-innerField-para">{user.bio}</span>
+        { user.bio ?         
+        <span className="profile-innerField-para">{user.bio}</span> 
+        : "" }
         <Button className="profile-innerField-button">Follow</Button>
         <span className="profile-innerField-follow">
           <img className="profile-innerField-icon" src={FollowIcon}/>

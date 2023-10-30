@@ -1,5 +1,5 @@
 * {
-  padding: 0;
+  padding: 5px;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Mona Sans' !important;
@@ -14,4 +14,17 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.parent {
+  background-color: #6e5494;
+  border-radius: 4px;
+}
+
+.wrapper {
+  display: flex; 
+  flex-direction: column;
+  height: 750px;
+  overflow-y: scroll;
+  scrollbar-color: #c9510c;
 }

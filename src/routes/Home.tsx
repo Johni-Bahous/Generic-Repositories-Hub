@@ -2,6 +2,7 @@
 import Profile from "../components/Profile";
 import  Repo  from "../components/Repo";
 import  Search  from "../components/Search";
+
 import { UserProps } from "../types/user";
 import { RepoProps } from "../types/repos";
 
@@ -37,14 +38,24 @@ const Home = () => {
 
       
     return (
-        <div>
+        <div className="parent">
           <Container>
-            <Row className="mb-3">
+            <Row>
               <Col xs={12}><Search loadUser={loadUser} loadRepos={loadRepos}/></Col>
             </Row>
             <Row>
               <Col xs={4}> { user && <Profile user={user} /> }</Col>
-              <Col xs={8}> { repo && repo.map(data => <Repo data={data}/> ) }</Col>
+              {repo ?               
+              <Col className="pe-0" xs={8}>
+                <div>
+                  henlo
+                </div>
+                <div className="p-0 wrapper">
+                  { repo && repo.map(data => <Repo data={data}/> ) }
+                  </div>
+                </Col>
+                   : ""}
+
             </Row>
           </Container>
         </div>
