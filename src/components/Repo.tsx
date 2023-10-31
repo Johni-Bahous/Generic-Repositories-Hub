@@ -8,7 +8,7 @@ import WatchIcon from "../assets/eyeglass.svg";
 type Repos = {
   data: RepoProps;
 };
-
+/** A functional component that renders out all the user's repositories with requested data fetched from the API */
 const Repo = ({ data }: Repos) => {
   return (
     <div className="repo">

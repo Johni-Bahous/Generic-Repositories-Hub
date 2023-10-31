@@ -9,7 +9,7 @@ import { RepoProps } from "../types/repos";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-
+/** The heart of the app with fetch functions that recieve a username through user input and fetches data on the user and the user's repositories */
 const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null);
 

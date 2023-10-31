@@ -7,7 +7,7 @@ import FavIcon from "../assets/star.svg";
 type User = {
   user: UserProps;
 };
-
+/** A functional component that renders out the user profile with requested data fetched from the API */
 const Profile = ({ user }: User) => {
   return (
     <div className="profile">
