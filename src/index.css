@@ -26,5 +26,8 @@ body {
   flex-direction: column;
   height: 750px;
   overflow-y: scroll;
-  scrollbar-color: #c9510c;
+}
+
+.wrapper::-webkit-scrollbar{
+ display: none;
 }
