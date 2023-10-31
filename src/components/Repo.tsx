@@ -6,27 +6,28 @@ import StarIcon from "../assets/star.svg";
 import WatchIcon from "../assets/eyeglass.svg";
 
 type Repos = {
-  data: RepoProps
-}
+  data: RepoProps;
+};
 
- const Repo = ({ data }: Repos) => {
-
+const Repo = ({ data }: Repos) => {
   return (
     <div className="repo">
       <span className="repo-text">{data.name}</span>
-      <span className="repo-subtext">
-        {data.description}
-      </span>
+      <span className="repo-subtext">{data.description}</span>
       <div className="repo-tagField">
         <span className="repo-tagField-tag">
-        <img className="repo-tagField-icon" src={LangIcon}/> {data.language} •
-        <img className="repo-tagField-icon" src={ForkIcon}/> {data.forks_count} •
-        <img className="repo-tagField-icon" src={StarIcon}/> {data.stargazers_count} •
-        <img className="repo-tagField-icon" src={WatchIcon}/>  {data.watchers_count} 
-          </span>
+          <img className="repo-tagField-icon" src={LangIcon} /> {data.language}{" "}
+          •
+          <img className="repo-tagField-icon" src={ForkIcon} />{" "}
+          {data.forks_count} •
+          <img className="repo-tagField-icon" src={StarIcon} />{" "}
+          {data.stargazers_count} •
+          <img className="repo-tagField-icon" src={WatchIcon} />{" "}
+          {data.watchers_count}
+        </span>
       </div>
     </div>
   );
 };
 
-export default Repo
+export default Repo;
