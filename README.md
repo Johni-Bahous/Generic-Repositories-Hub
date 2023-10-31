@@ -1,27 +1,37 @@
-# React + TypeScript + Vite
+# Generic Repositories Hub 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Generic Repositories Hub is a web app that enables the user to look up any registered user on GitHub and browse through any and all their public repositories.
 
-Currently, two official plugins are available:
+The [official GitHub API](https://docs.github.com/en/rest) is used to fetch the user data displayed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The user is also able to filter through the different repositories with the help of the filter bar.
 
-## Expanding the ESLint configuration
+## How to run
+Clone the repository in the method that you prefer.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You run the following git command in the terminal of your IDE of choice.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```node
+git clone https://github.com/Johni-Bahous/Generic-Repositories-Hub.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+After a successful cloning, in the terminal of the IDE, install all of the project's dependencies by running the following command.
+
+```node
+npm install
+```
+
+And then in order to run the app, simply run this command.
+
+```node
+npm run dev
+```
+
+Copy or follow the localhost link that appears and follow the on-screen directions.
+
+## Future Improvements
+
+* One major improvement would be to take advantage of the [v4 of the GitHub API](https://docs.github.com/en/graphql) as this version of the API is built using GraphQL which in turn would allow for cleaner and leaner responses.
+
+
+* While the aim is to keep this app as lightweight as possible, the use of other JavaScript libraries such as this [date utility library](https://date-fns.org/) (in order to better display dates in Profile or Repos), would improve the user experience even if by the slightest margins.
