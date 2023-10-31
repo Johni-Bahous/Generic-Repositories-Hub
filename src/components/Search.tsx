@@ -8,6 +8,8 @@ type SearchProps = {
 
 import { useState } from "react";
 
+/** A functional component that works twofold, first it renders out a search bar for the user to put in a username
+ *  and the other functionality is to pass said username to the fetch functions */
 const Search = ({ loadUser, loadRepos }: SearchProps) => {
   const [userName, setUserName] = useState("");
 

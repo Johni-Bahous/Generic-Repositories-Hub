@@ -1,6 +1,8 @@
 import { RepoProps } from "../types/repos";
 import "../sass/filter.scss";
 
+
+/** A functional component that renders out a filter bar which the users can use to filter through the available repositories */
 const Filter = ({
   data,
   setSearchResults,
