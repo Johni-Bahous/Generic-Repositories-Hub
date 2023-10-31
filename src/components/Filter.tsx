@@ -1,33 +1,36 @@
-import { RepoProps } from "../types/repos"
+import { RepoProps } from "../types/repos";
+import "../sass/filter.scss";
 
-
-
-
-const Filter = ( data: RepoProps[], setSearchResults: (value: React.SetStateAction<RepoProps[]>) => void )  => {
-
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) : void => {
-    
-    e.preventDefault()
-  
-  }
+const Filter = ({
+  data,
+  setSearchResults,
+}: {
+  data: RepoProps[];
+  setSearchResults: (value: React.SetStateAction<RepoProps[]>) => void;
+}) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+  };
 
   const handleSearchChange = (e: { target: { value: string } }) => {
-    
-    const res = data.filter((dat: { name: string}) => dat.name.includes(e.target.value))
+    const results = data.filter((datum: { name: string }) =>
+      datum.name.includes(e.target.value)
+    );
 
-    setSearchResults(res)
+    setSearchResults(results);
+  };
 
-  }
-
- 
   return (
-    <div>
       <form className="filter" onSubmit={handleSubmit}>
-        <input className="filter-input" type="text" id="search" onChange={handleSearchChange}/>
-        <button className="filter-button">Filter</button>
+        <input
+          placeholder="Filter through the repositories"
+          className="filter-input"
+          type="text"
+          id="search"
+          onChange={handleSearchChange}
+        />
       </form>
-    </div>
-  )
-}
+  );
+};
 
-export default Filter
+export default Filter;
