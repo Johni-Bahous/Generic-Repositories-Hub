@@ -26,9 +26,9 @@ const Home = () => {
   const [notFound, setNotFound] = useState<boolean>(false);
 
   const loadUser = async (userName: string) => {
-    const API_ENDPOINT =`https:api.github.com/users/${userName}`
 
-    const results = await fetch(API_ENDPOINT);
+    
+    const results = await fetch(`/https:api.github.com/users/${userName}`);
 
     const data = await results.json();
 
@@ -44,7 +44,7 @@ const Home = () => {
   };
 
   const loadRepos = async (userName: string) => {
-    const results = await fetch(`https:api.github.com/users/${userName}/repos`);
+    const results = await fetch(`/https:api.github.com/users/${userName}/repos`);
 
     const data = await results.json();
 
