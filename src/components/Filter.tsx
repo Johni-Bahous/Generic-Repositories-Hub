@@ -1,5 +1,6 @@
 import { RepoProps } from "../types/repos";
 import "../sass/filter.scss";
+import { Form } from "react-bootstrap";
 
 
 /** A functional component that renders out a filter bar which the users can use to filter through the available repositories */
@@ -23,15 +24,11 @@ const Filter = ({
   };
 
   return (
-      <form className="filter" onSubmit={handleSubmit}>
-        <input
-          placeholder="Filter through the repositories"
-          className="filter-input"
-          type="text"
-          id="search"
-          onChange={handleSearchChange}
-        />
-      </form>
+      <Form className="filter" onSubmit={handleSubmit}>
+        <Form.Group className="filter-input g-0">
+          <Form.Control className="g-0" type="text" placeholder="Search through the repositories" onChange={(e) => handleSearchChange(e)}></Form.Control>
+        </Form.Group>
+      </Form>
   );
 };
 

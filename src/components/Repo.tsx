@@ -1,9 +1,7 @@
 import "../sass/repo.scss";
 import { RepoProps } from "../types/repos";
-import LangIcon from "../assets/language.svg";
-import ForkIcon from "../assets/fork.svg";
-import StarIcon from "../assets/star.svg";
-import WatchIcon from "../assets/eyeglass.svg";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 
 type Repos = {
   data: RepoProps;
@@ -16,13 +14,13 @@ const Repo = ({ data }: Repos) => {
       <span className="repo-subtext">{data.description}</span>
       <div className="repo-tagField">
         <span className="repo-tagField-tag">
-          <img className="repo-tagField-icon" src={LangIcon} /> {data.language}{" "}
-          •
-          <img className="repo-tagField-icon" src={ForkIcon} />{" "}
+          <i className="repo-tagField-icon bi-code-slash text-dark"/> 
+          {data.language} •
+          <i className="repo-tagField-icon bi-git text-dark"/>
           {data.forks_count} •
-          <img className="repo-tagField-icon" src={StarIcon} />{" "}
+          <i className="repo-tagField-icon bi-star-fill text-dark"/>
           {data.stargazers_count} •
-          <img className="repo-tagField-icon" src={WatchIcon} />{" "}
+          <i className="repo-tagField-icon bi-search text-dark"/>
           {data.watchers_count}
         </span>
       </div>

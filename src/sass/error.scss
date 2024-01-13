@@ -1,0 +1,33 @@
+.error{
+    
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B0A8B9;
+    padding: 16px;
+    border-radius: 4px;
+ 
+    
+    &-title{
+        font-family: Mona Sans, sans-serif !important;
+        color: #fff;
+        background-color: #18053D;
+        font-weight: 700;
+        font-size: 26px;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-body{
+        font-family: Mona Sans, sans-serif !important;
+        color: #fff;
+        background-color: #18053D;
+        font-weight: 700;
+        font-size: 22px;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+}

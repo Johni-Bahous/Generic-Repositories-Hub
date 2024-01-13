@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Button, Form, Row } from "react-bootstrap";
 import "../sass/search.scss";
 
 type SearchProps = {
@@ -20,17 +20,16 @@ const Search = ({ loadUser, loadRepos }: SearchProps) => {
   return (
     <div className="search">
       <span className="search-title">Please put in the desired username</span>
-      <div>
-        <input
-          className="search-input"
-          type="text"
-          placeholder=" Username"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <Button className="search-button" onClick={handleClick}>
-          Search
-        </Button>
-      </div>
+      <Form>
+        <Row>
+          <Form.Group className="search-input g-0">
+            <Form.Control type="text" placeholder="Username" onChange={(e) => setUserName(e.target.value)}></Form.Control>
+          </Form.Group>
+          <Button className="search-button" type="button" onClick={handleClick}>
+            Search
+          </Button>
+        </Row>
+      </Form>
     </div>
   );
 };
