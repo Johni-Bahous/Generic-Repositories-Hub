@@ -26,7 +26,9 @@ const Home = () => {
   const [notFound, setNotFound] = useState<boolean>(false);
 
   const loadUser = async (userName: string) => {
-    const results = await fetch(`https:api.github.com/users/${userName}`);
+    const API_ENDPOINT =`https:api.github.com/users/${userName}`
+
+    const results = await fetch(API_ENDPOINT);
 
     const data = await results.json();
 
